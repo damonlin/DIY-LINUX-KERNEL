@@ -1,2 +1,2 @@
-# DIY_LINUX_KERNEL
+# DIY LINUX KERNEL
 Create linux kernel setp by step
