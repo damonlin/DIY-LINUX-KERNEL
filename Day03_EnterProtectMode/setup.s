@@ -2,7 +2,7 @@
 .global start
 .text
 
-.equ SYSSEG, 0x9020
+.equ SEUPSEG, 0x9020
 
 .macro InitSegDescriptor OFFSET GDT_SEG_ADDR
 	xor     %ax, %ax
@@ -15,7 +15,7 @@
 	movb    %ah, (\GDT_SEG_ADDR + 7)
 .endm
 
-	ljmp 	$SYSSEG, $start
+	ljmp 	$SEUPSEG, $start
 start:
 	mov 	%cs, %ax
 	mov 	%ax, %ds	
