@@ -1,9 +1,9 @@
 .code16
 .global start
 .text	
-.equ SEUPSEG, 0x9020
+.equ SETUPSEG, 0x9020
 
-	ljmp 	$SEUPSEG, $start
+	ljmp 	$SETUPSEG, $start
 start:
 	mov 	%cs, %ax
 	mov 	%ax, %ds	

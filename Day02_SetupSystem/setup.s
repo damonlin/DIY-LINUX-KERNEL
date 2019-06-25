@@ -2,9 +2,9 @@
 .global start
 .text
 
-.equ SEUPSEG, 0x9020
+.equ SETUPSEG, 0x9020
 
-	ljmp 	$SEUPSEG, $start
+	ljmp 	$SETUPSEG, $start
 start:
         # Print message
 	mov	$0x03, %ah		# read cursor pos
