@@ -1,4 +1,4 @@
-#第一天
+# 第一天
 ===
 
 開發作業系統的第一天, 先寫一個簡單的 hello world, 因為作業系統一開始什麼功能都沒有, 只能利用 BIOS 的功能來印出 hello world 字串包含兩個檔案, 分別是 bootsect.s 和 Makefile
