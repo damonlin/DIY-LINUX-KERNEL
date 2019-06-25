@@ -1,0 +1,10 @@
+bootsect
+Image
+bootsect.o
+setup
+setup.o
+head
+head.o
+system
+kernel
+main.o
