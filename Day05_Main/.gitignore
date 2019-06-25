@@ -7,3 +7,4 @@ head
 head.o
 system
 kernel
+main.o
