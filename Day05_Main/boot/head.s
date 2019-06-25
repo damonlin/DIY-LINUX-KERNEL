@@ -6,8 +6,7 @@ start:
 	# 設定 Data segment selector(0x10)
         mov	$0x10, %ax
         mov	%ax, %ds
-        mov	%ax, %ss 
-
+        
         call    main 
         jmp .
 

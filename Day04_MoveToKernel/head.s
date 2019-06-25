@@ -6,7 +6,6 @@ start:
 	# setup Data segment selector(0x10)
         mov	$0x10, %ax
         mov	%ax, %ds
-        mov	%ax, %ss   
 
 show_msg:
         # setup Video segment selector(0x18)
