@@ -9,7 +9,8 @@ struct {
 
 void show_msg();
 
-void main(void)
+void main(int a, int b)
 {
-        show_msg();        
+	if( a == 2 && b == 1)
+        	show_msg();        
 }

@@ -10,6 +10,8 @@ start:
         # load stack_start into SS:ESP
         lss     stack_start, %esp
 
+        push    $1
+        push    $2
         call    main 
         jmp .
 
