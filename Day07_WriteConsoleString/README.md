@@ -5,9 +5,9 @@
 ## 程式流程
 
 1. setup.s :  
-> * 透過 BIOS int 0x10 來讀取目前游標位址, 並且紀錄在記憶體位址 0x90000.
->
-> * 移除 GDT 的 Video Segment, 因為不再使用.
+* 透過 BIOS int 0x10 來讀取目前游標位址, 並且紀錄在記憶體位址 0x90000.
+
+* 移除 GDT 的 Video Segment, 因為不再使用.
 
 2. console.c : 
 
