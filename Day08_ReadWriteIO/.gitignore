@@ -1,0 +1,12 @@
+bootsect
+Image
+bootsect.o
+setup
+setup.o
+head
+head.o
+system
+tools/kernel
+main.o
+chr_drv.a
+console.o
