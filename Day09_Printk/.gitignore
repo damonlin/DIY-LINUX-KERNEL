@@ -10,3 +10,6 @@ tools/kernel
 main.o
 chr_drv.a
 console.o
+printk.o
+vsprintf.o
+kernel.o
