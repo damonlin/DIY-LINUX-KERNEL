@@ -1,6 +1,6 @@
 .code32
 .global start
-.global show_msg
+
 .text
 start:
 	# 設定 Data segment selector(0x10)
