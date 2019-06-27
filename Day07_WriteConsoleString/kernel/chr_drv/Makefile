@@ -1,9 +1,5 @@
 include ../../Makefile.header
 
-
-.s.o:
-	@$(AS) -o $*.o $<
-
 .c.o:
 	@$(CC) $(CFLAGS) -c -o $*.o $<
 
