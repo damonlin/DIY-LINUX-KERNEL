@@ -16,7 +16,7 @@ extern void trap_init();
 void main(void)
 {	
 	con_init();
-	//timer_init();
+	timer_init();
 	trap_init();
 	
 	printk("Entering kernel ...\n");
