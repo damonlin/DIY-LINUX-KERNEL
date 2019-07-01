@@ -42,9 +42,9 @@ default_int_handler:
         mov     %eax, %ds
 
         # shwo message
-#        pushl   $default_interrupt_msg
-#        call    printk
-#        popl    %eax
+        pushl   $default_interrupt_msg
+        call    printk
+        popl    %eax
 
         popl    %eax
         pop     %ds

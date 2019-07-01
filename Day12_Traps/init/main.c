@@ -8,8 +8,8 @@ extern void trap_init();
 void main(void)
 {	
 	con_init();
-	timer_init();
 	trap_init();
+	timer_init();	
 	
 	printk("Entering kernel ...\n");
 
@@ -17,6 +17,7 @@ void main(void)
        	sti();
 
 	{
+		// test divided by zero
                 int a = 1, b = 0;
                 a = a/b;
         }

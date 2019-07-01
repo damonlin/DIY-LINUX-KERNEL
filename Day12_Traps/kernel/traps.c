@@ -14,12 +14,14 @@ void reserved();
 static void die(char * str,long esp_ptr,long nr)
 {
 	long * esp = (long *) esp_ptr;
+
+	printk("\n%s:  %04x\n",str,nr&0xffff);
 	printk("EIP: %04x:%p\nEFLAGS:  %p\nESP:  %04x:%p\n",esp[1],     // CS
                                                             esp[0],     // EIP
                                                             esp[2],     // Eflag
                                                             esp[4],     // ESP
                                                             esp[3]);    // SS
-
+	cli();
         hlt();
 }
 
@@ -75,9 +77,9 @@ void do_reserved(long esp, long error_code)
 
 void trap_init(void)
 {
-	int i;
+	
 
-        for (i=17;i<48;i++)
+        for (int i = 0; i<48; i++)
 		set_trap_gate(i,&reserved);
 
 	set_trap_gate(0,&divide_error);	
