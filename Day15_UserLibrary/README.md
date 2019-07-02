@@ -35,7 +35,6 @@ __asm__ volatile ("int $0x80"
 _syscall1(int, write, const char *, buf)
 ```
 
-* 
 4. main.c :
 
 * 使用函式庫來印出字串。
