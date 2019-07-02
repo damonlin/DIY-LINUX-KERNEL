@@ -1,0 +1,10 @@
+AS	= as
+LD	= ld
+LDFLAGS =  -x 
+CC	= gcc
+CFLAGS  = -g -fno-builtin -fomit-frame-pointer -fstrength-reduce -fno-stack-protector
+
+# support 32bit
+AS      += --32
+CFLAGS  += -m32
+LDFLAGS  += -m elf_i386
