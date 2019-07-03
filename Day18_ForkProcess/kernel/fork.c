@@ -24,6 +24,7 @@ int copy_process(int nr,long ebp,long edi,long esi,long gs,long none,
 
         p->state = TASK_UNINTERRUPTIBLE;
         p->pid = last_pid;        
+        p->father = current->pid;        
         p->tss.back_link = 0;
         p->tss.esp0 = PAGE_SIZE + (long) p;   
         p->tss.ss0 = 0x10;
