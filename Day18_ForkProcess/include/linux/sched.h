@@ -14,6 +14,7 @@
 
 extern struct task_struct* current;
 extern struct task_struct* task[];
+extern long volatile jiffies;
 
 struct tss_struct {
 	long	back_link;	/* 16 high bits zero */
@@ -52,6 +53,8 @@ struct task_struct {
 	long pid,father,pgrp,session,leader;
 	unsigned short uid,euid,suid;
 	unsigned short gid,egid,sgid;
+	long alarm;
+	long utime,stime,cutime,cstime,start_time;
 /* ldt for this task 0 - zero 1 - cs 2 - ds&ss */
 	struct desc_struct ldt[3];
 /* tss for this task */
@@ -63,6 +66,7 @@ struct task_struct {
 /* ec,brk... */	0,0,0,0,0,0, \
 /* pid etc.. */	0,-1,0,0,0, \
 /* uid etc */	0,0,0,0,0,0, \
+/* alarm */	0,0,0,0,0,0, \
 	{ \
 		{0,0}, \
 /* ldt */	{0x9f,0xc0fa00}, \
