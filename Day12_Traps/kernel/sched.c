@@ -15,7 +15,7 @@ struct {
 	short ss;	// ss in 0x10(data segment)
 } stack_start = { &kernel_stack[1024] , 0x10 };
 
-static long jiffies = 0;
+long volatile jiffies = 0;
 
 void do_timer()
 {
