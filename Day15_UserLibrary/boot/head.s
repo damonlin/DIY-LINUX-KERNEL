@@ -17,6 +17,11 @@ start:
         # setup GDT again, because the old GDT will be replaced !!!
         call    setup_gdt
 
+        # reload segments for safety after resetting GDT
+        mov	$0x10, %ax
+        mov	%ax, %ds                
+        lss     stack_start, %esp
+
         call    main  
         jmp     .
 
