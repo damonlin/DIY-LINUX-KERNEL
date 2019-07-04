@@ -24,7 +24,7 @@ union task_union {
 static union task_union init_task = {INIT_TASK,};
 struct task_struct * task[NR_TASKS] = {&(init_task.task), };
 
-long volatile jiffies = 0; = 0;
+long volatile jiffies = 0;
 
 void do_timer()
 {
