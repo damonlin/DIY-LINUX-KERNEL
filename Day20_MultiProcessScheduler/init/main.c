@@ -30,34 +30,11 @@ void main(void)
 
 	move_to_user_mode();	
 
-	pid = fork();
-        if( pid == 0 ) // Task2
-        {       
-                pid = fork();
-                if( pid == 0 ) // Task3
-                {
-                        
-                        //for(;;)
-                        {
-                                write("Task3 "); // use library
-
-                                // pause
-                                //for(int i = 0; i < 10000000; ++i) {}                                          
-                        }
-                }
+	if(!(pid=fork()))
+	{
+                if(!(pid=fork()))
+		        write("This is process2\n");
                 else
-                {
-                        //for(;;)
-                        {
-                                write("Task2 "); // use library
-
-                                // pause
-                                //for(int i = 0; i < 10000000; ++i) {}                                          
-                        }
-                }                      
-        }
-        else    // Task1
-        {
-                for(;;);                                             
-        } 
+                        write("This is process1\n");
+	}
 }
