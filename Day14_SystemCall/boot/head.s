@@ -71,12 +71,12 @@ timer_interrupt:
         pushl   %eax
         movl    $0x10, %eax            # Now we are at Kernel, set to Kernel DS
         mov     %eax, %ds
-
-        call    do_timer      
-
+             
         # send EOI to reopen interrupt
         movb    $0x20, %al
         outb    %al, $0x20
+
+        call    do_timer
 
         popl    %eax
         pop     %ds   
