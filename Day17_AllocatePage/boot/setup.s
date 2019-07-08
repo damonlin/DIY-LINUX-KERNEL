@@ -50,34 +50,6 @@ end_move:
 	or      $2,    %al
 	out    	%al,   $0x92
 
-		mov	$0x11, %al		# initialization sequence(ICW1)
-					# ICW4 needed(1),CASCADE mode,Level-triggered
-	out	%al, $0x20		# send it to 8259A-1
-	.word	0x00eb,0x00eb		# jmp $+2, jmp $+2
-	out	%al, $0xA0		# and to 8259A-2
-	.word	0x00eb,0x00eb
-	mov	$0x20, %al		# start of hardware int's (0x20)(ICW2)
-	out	%al, $0x21		# from 0x20-0x27
-	.word	0x00eb,0x00eb
-	mov	$0x28, %al		# start of hardware int's 2 (0x28)
-	out	%al, $0xA1		# from 0x28-0x2F
-	.word	0x00eb,0x00eb		#               IR 7654 3210
-	mov	$0x04, %al		# 8259-1 is master(0000 0100) --\
-	out	%al, $0x21		#				|
-	.word	0x00eb,0x00eb		#			 INT	/
-	mov	$0x02, %al		# 8259-2 is slave(       010 --> 2)
-	out	%al, $0xA1
-	.word	0x00eb,0x00eb
-	mov	$0x01, %al		# 8086 mode for both
-	out	%al, $0x21
-	.word	0x00eb,0x00eb
-	out	%al, $0xA1
-	.word	0x00eb,0x00eb
-	mov	$0xFF, %al		# mask off all interrupts for now
-	out	%al, $0x21
-	.word	0x00eb,0x00eb
-	out	%al, $0xA1
-
 	# Load the GDT base address and limit from memory into the GDTR register
 	lgdt   	gdt_48
 
