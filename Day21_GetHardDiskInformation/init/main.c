@@ -18,8 +18,7 @@ struct drive_info { char dummy[32]; } drive_info;
 void main(void)
 {	
 	drive_info = DRIVE_INFO; 
-	
-	// physical memory 0 ~ 1MB for kernel's code and data, 1MB ~ 4MB for cache
+		
 	// 4MB ~ 16MB for allocating pages dynamically
         mem_init(4*1024*1024, 16*1024*1024);
 

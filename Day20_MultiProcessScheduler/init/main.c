@@ -13,8 +13,7 @@ extern void mem_init(long, long);
 void main(void)
 {	
 	int pid;
-
-	// physical memory 0 ~ 1MB for kernel's code and data, 1MB ~ 4MB for cache
+	
 	// 4MB ~ 16MB for allocating pages dynamically
         mem_init(4*1024*1024, 16*1024*1024);
 
