@@ -1,6 +1,7 @@
+head
 bootsect
 setup
+tools
 Image
-kernel
-system
+*.a
 *.o
