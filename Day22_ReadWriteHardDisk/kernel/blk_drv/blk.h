@@ -14,7 +14,6 @@ struct request {
 	unsigned long nr_sectors;
 	char * buffer;
 	struct task_struct * waiting;
-	//struct buffer_head * bh;
 	struct request * next;
 	unsigned char b_lock;	/* 0 - ok, 1 -locked */
 };

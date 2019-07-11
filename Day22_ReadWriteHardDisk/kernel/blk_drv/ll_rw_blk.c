@@ -83,7 +83,6 @@ repeat:
 	req->nr_sectors = 2;
 	req->buffer     = buffer;
 	req->waiting    = NULL;
-	//req->bh = bh;
 	req->next       = NULL;
 
         add_request(MAJOR(dev)+blk_dev, req);
@@ -95,7 +94,7 @@ void ll_rw_block(int dev, int rw, char* buffer, int blocknr)
         unsigned int major;
 
 	if ((major=MAJOR(dev)) >= NR_BLK_DEV || !(blk_dev[major].request_fn)) {
-		printk("Trying to read nonexistent block-device\n\r");
+		printk("Trying to read nonexistent block-device\n");
 		return;
 	}
 
