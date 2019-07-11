@@ -31,10 +31,10 @@ void buffer_init(long buffer_end)
 ```
 while ( (b -= BLOCK_SIZE) >= ((void *) (h+1)) ) 
 ```
->    start_buffer                                                          buffer_memory_end
-  	      	|----|----|----|----|----|----|--------|--------|--------|
-		| h1   h2   h3    .........       b3        b2      b1   |
-		|----|----|----|----|----|----|--------|--------|--------|
+
+start_buffer    |       |   |  |  |   |   |   |  buffer_memory_end
+--------------|:--:|---:|-----:| ----:|------:|----:|-----:|----
+ --->                 |h1    | h2 | h3 |... |  b3 |  b2 | b1| <---
   		 
 * 將每一個 `buffer_head`把它們鍊結起來，形成 double linked list。
 ```
