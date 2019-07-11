@@ -1,9 +1,7 @@
 bootsect
-Image
-bootsect.o
 setup
-setup.o
-head
-head.o
-system
+Image
 kernel
+system
+head
+*.o

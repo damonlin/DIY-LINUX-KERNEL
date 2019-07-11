@@ -1,5 +1,4 @@
 bootsect
 Image
-bootsect.o
 setup
-setup.o
+*.o
